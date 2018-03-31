@@ -8,6 +8,51 @@ QWidget {
 
 
 
+QScrollBar::left-arrow, 
+QScrollBar::right-arrow, 
+QScrollBar::add-page, 
+QScrollBar::sub-page {
+    border: none;
+    background: none;
+    color: none;
+}
+QScrollBar::add-page, 
+QScrollBar::sub-page {
+    background: none;
+}
+QScrollBar::add-line, 
+QScrollBar::sub-line {
+    border: none;
+    background: none;
+}
+QScrollBar:vertical {
+    border: 0px solid rgb(225,225,225);
+    background: rgb(245,245,245);
+    width: 12px;
+}
+QScrollBar::handle:vertical {
+    background: rgb(200,200,200);
+    border-radius: 4px;
+    margin: 2px;
+    min-height: 20px;
+}
+QScrollBar:horizontal {
+    border: 0px solid rgb(225,225,225);
+    background: rgb(245,245,245);
+    height: 12px;
+}
+QScrollBar::handle:horizontal {
+    background: rgb(200,200,200);
+    border-radius: 4px;
+    margin: 2px;
+    min-width: 20px;
+}
+
+
+
+
+
+
 
 QGroupBox {
 	background: rgb(235,235,235);
@@ -18,7 +63,9 @@ QGroupBox::title {
 	subcontrol-origin: margin;
 	color: rgb(90,90,90);
 	background: transparent;
+    font-size: 10pt;
 	font-weight: bold;
+    text-transform: uppercase;
 }
 
 
@@ -55,7 +102,7 @@ QRadioButton::indicator:checked {
 	background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5, radius:0.4, stop:0 rgb(80,80,80), stop:0.65 rgb(80,80,80) stop:0.7 rgb(150,150,150), stop:1 rgb(250,250,250));
 }
 QCheckBox::indicator:checked {
-	image: url("icons/cross.svg");
+        image: url("${prefix}/icons/cross.svg");
 }
 QRadioButton::indicator:unchecked {
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(250,250,250), stop:1 rgb(245,245,245));
@@ -81,7 +128,9 @@ QCheckBox::indicator:disabled {
 
 
 QPushButton, QToolButton {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(240,240,240), stop:1 rgb(235,235,235));
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(240,240,240), 
+                                stop:1 rgb(235,235,235));
 	border: 1px solid rgb(210,210,210);
 	padding: 6px;
 	icon-size: 14px;
@@ -123,9 +172,12 @@ QSpinBox:up-button,
 QDoubleSpinBox:up-button, 
 QTimeEdit:up-button, 
 QDateTimeEdit:up-button {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(240,240,240), stop:1 rgb(235,235,235));
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(240,240,240), stop:1 rgb(235,235,235));
 	border-top: 1px solid rgb(210,210,210);
 	border-right: 1px solid rgb(210,210,210);
+    border-left: 1px solid rgb(210,210,210);
+    border-top-right-radius: 6px;
 	width: 22px;
 	margin-top: -1px;
 	margin-right: -1px;
@@ -140,9 +192,12 @@ QSpinBox:down-button,
 QDoubleSpinBox:down-button, 
 QTimeEdit:down-button, 
 QDateTimeEdit:down-button {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(235,235,235), stop:1 rgb(230,230,230));
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(235,235,235), stop:1 rgb(230,230,230));
 	border-bottom: 1px solid rgb(210,210,210);
 	border-right: 1px solid rgb(210,210,210);
+    border-left: 1px solid rgb(210,210,210);
+    border-bottom-right-radius: 6px;
 	width: 22px;
 	margin-bottom: -1px;
 	margin-right: -1px;
@@ -160,12 +215,12 @@ QSpinBox:up-button::pressed, QDoubleSpinBox:up-button::pressed, QTimeEdit:up-but
 QSpinBox:up-arrow, QDoubleSpinBox:up-arrow, QTimeEdit:up-arrow, QDateTimeEdit:up-arrow {
 	width: 16px;
 	height: 7px;
-	image: url("icons/up-arrow.svg");
+        image: url("${prefix}/icons/up-arrow.svg");
 }
 QSpinBox:down-arrow, QDoubleSpinBox:down-arrow, QTimeEdit:down-arrow, QDateTimeEdit:down-arrow {
 	width: 16px;
 	height: 7px;
-	image: url("icons/down-arrow.svg");
+        image: url("${prefix}/icons/down-arrow.svg");
 }
 QSpinBox:focus, QDoubleSpinBox:focus, QTimeEdit:focus, QDateTimeEdit:focus {
 	border-width: 1px;
@@ -180,7 +235,8 @@ QSlider {
 	margin: 2px;
 }
 QSlider::groove {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(220,220,220), stop:1 rgb(210,210,210));
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(220,220,220), stop:1 rgb(210,210,210));
     border: 1px solid rgb(190,190,190);
     border-radius: 1px;
 }
@@ -191,7 +247,8 @@ QSlider::groove:vertical {
     width: 2px;
 }
 QSlider::handle {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(245,245,245), stop:1 rgb(240,240,240));
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(245,245,245), stop:1 rgb(240,240,240));
     border: 1px solid rgb(200,200,200);
     width: 14px;
     height: 14px;
@@ -206,9 +263,83 @@ QSlider::handle:vertical {
 	margin-right: -7px;
 }
 QSlider::sub-page {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(150,150,150), stop:1 rgb(140,140,140));
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(150,150,150), stop:1 rgb(140,140,140));
 }
 
+
+
+
+
+QTabWidget::pane { /* The tab widget frame */
+    border: 1px solid rgb(225,225,225);
+    border-radius: 6px;
+    position: absolute;
+    top: -0.85em;
+    padding-top: 10px;
+}
+QTabWidget::tab-bar {
+    alignment: center;
+}
+QTabBar::tab {
+    background: rgb(250,250,250);
+    border: 1px solid rgb(210,210,210);
+    min-width: 8ex;
+    padding: 3px;
+}
+QTabBar::tab:selected {
+    color: rgb(255,255,255);
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 rgb(160,160,160), stop: 1.0 rgb(140,140,140));
+    border: 1px solid rgb(160,160,160);
+    margin-left: -1px;
+    margin-right: -1px;
+}
+QTabBar::tab:first {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+QTabBar::tab:last {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+QTabBar::tab:only-one {
+    border-radius: 6px;
+}
+
+
+
+
+
+QHeaderView::section {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                      stop:0 rgb(240,240,240), 
+                                      stop:1 rgb(235,235,235));
+    padding: 4px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border: 1px solid rgb(225,225,225);
+}
+QHeaderView::section:first {
+    margin-left: -1px;
+    border-top-left-radius: 6px;
+}
+QHeaderView::section:last {
+    margin-right: -1px;
+    border-top-right-radius: 6px;
+}
+QHeaderView::down-arrow {
+    image: url("${prefix}/icons/up-arrow.svg");
+}
+
+QHeaderView::up-arrow {
+    image: url("${prefix}/icons/down-arrow.svg");
+}
+QTableView {
+    background: rgb(250,250,250);
+    border: 1px solid rgb(225,225,225);
+    gridline-color: rgb(240,240,240);
+}
 
 
 
@@ -223,13 +354,13 @@ QSlider::sub-page {
 
 
 #clickButton {
-	image: url("icons/click.svg");
+        image: url("${prefix}/icons/click.svg");
 }
 
 #playButton {
-	image: url("icons/play.svg");
+        image: url("${prefix}/icons/play.svg");
 }
 
 #stopButton {
-	image: url("icons/stop.svg");
+        image: url("${prefix}/icons/stop.svg");
 }
