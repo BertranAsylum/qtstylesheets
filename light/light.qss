@@ -1,0 +1,235 @@
+QWidget {
+	color: rgb(50,50,50);
+	background-color: rgb(240,240,240);
+	border-radius: 6px;
+	outline: none;
+}
+
+
+
+
+
+QGroupBox {
+	background: rgb(235,235,235);
+    border: 1px solid rgb(225,225,225);
+    margin-top: 1.2em;
+}
+QGroupBox::title {
+	subcontrol-origin: margin;
+	color: rgb(90,90,90);
+	background: transparent;
+	font-weight: bold;
+}
+
+
+
+
+
+QLabel {
+	background: transparent;
+}
+
+
+
+
+
+QRadioButton, QCheckBox {
+	background: transparent;
+}
+QRadioButton:disabled, QCheckBox:disabled {
+	color: rgb(140,140,140);
+}
+QRadioButton::indicator {
+	border: 1px solid rgb(210,210,210); 
+	border-radius: 6px;
+	width: 12px;
+	height: 12px;
+}
+QCheckBox::indicator {
+	border: 1px solid rgb(210,210,210); 
+	border-radius: 2px;
+	width: 12px;
+	height: 12px;
+}
+QRadioButton::indicator:checked {
+	background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5, radius:0.4, stop:0 rgb(80,80,80), stop:0.65 rgb(80,80,80) stop:0.7 rgb(150,150,150), stop:1 rgb(250,250,250));
+}
+QCheckBox::indicator:checked {
+	image: url("icons/cross.svg");
+}
+QRadioButton::indicator:unchecked {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(250,250,250), stop:1 rgb(245,245,245));
+}
+QCheckBox::indicator:unchecked {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(250,250,250), stop:1 rgb(245,245,245));
+}
+QRadioButton::indicator:unchecked:hover {
+	background: rgb(255,255,255);
+	border: 1px solid rgb(220,220,220); 
+}
+QCheckBox::indicator:unchecked:hover {
+	background: rgb(255,255,255);
+	border: 1px solid rgb(220,220,220); 
+}
+QRadioButton::indicator:disabled,
+QCheckBox::indicator:disabled {
+	background: rgb(210,210,210);
+}
+
+
+
+
+
+QPushButton, QToolButton {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(240,240,240), stop:1 rgb(235,235,235));
+	border: 1px solid rgb(210,210,210);
+	padding: 6px;
+	icon-size: 14px;
+}
+QPushButton:disabled, 
+QToolButton:disabled {
+	color: rgb(120,120,120);
+	background: rgb(230,230,230);
+	border: 1px solid rgb(220,220,220);
+}
+QPushButton:hover, 
+QToolButton:hover {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(250,250,250), stop:1 rgb(245,245,245));
+}
+
+QPushButton:checked, QToolButton:checked,
+QPushButton:pressed, QToolButton:pressed {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(175,175,175), stop:1 rgb(195,195,195));
+	border: 1px solid rgb(195,195,195);
+}
+
+
+
+
+
+QSpinBox, QDoubleSpinBox, QTimeEdit, QDateTimeEdit {
+	background: rgb(250,250,250);
+	border: 1px solid rgb(210,210,210);
+	padding: 4px;
+}
+QSpinBox:disabled, 
+QDoubleSpinBox:disabled, 
+QTimeEdit:disabled, 
+QDateTimeEdit:disabled {
+	color: rgb(140,140,140);
+	background: rgb(240,240,240);
+}
+QSpinBox:up-button, 
+QDoubleSpinBox:up-button, 
+QTimeEdit:up-button, 
+QDateTimeEdit:up-button {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(240,240,240), stop:1 rgb(235,235,235));
+	border-top: 1px solid rgb(210,210,210);
+	border-right: 1px solid rgb(210,210,210);
+	width: 22px;
+	margin-top: -1px;
+	margin-right: -1px;
+}
+QSpinBox:up-button:disabled, 
+QDoubleSpinBox:up-button:disabled, 
+QTimeEdit:up-button:disabled, 
+QDateTimeEdit:up-button:disabled {
+	background: rgb(230,230,230);
+}
+QSpinBox:down-button, 
+QDoubleSpinBox:down-button, 
+QTimeEdit:down-button, 
+QDateTimeEdit:down-button {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(235,235,235), stop:1 rgb(230,230,230));
+	border-bottom: 1px solid rgb(210,210,210);
+	border-right: 1px solid rgb(210,210,210);
+	width: 22px;
+	margin-bottom: -1px;
+	margin-right: -1px;
+}
+QSpinBox:down-button:disabled, 
+QDoubleSpinBox:down-button:disabled, 
+QTimeEdit:down-button:disabled, 
+QDateTimeEdit:down-button:disabled {
+	background: rgb(230,230,230);
+}
+QSpinBox:down-button::pressed, QDoubleSpinBox:down-button::pressed, QTimeEdit:down-button::pressed, QDateTimeEdit:down-button::pressed,
+QSpinBox:up-button::pressed, QDoubleSpinBox:up-button::pressed, QTimeEdit:up-button::pressed, QDateTimeEdit:up-button::pressed {
+	background: rgb(210,210,210);
+}
+QSpinBox:up-arrow, QDoubleSpinBox:up-arrow, QTimeEdit:up-arrow, QDateTimeEdit:up-arrow {
+	width: 16px;
+	height: 7px;
+	image: url("icons/up-arrow.svg");
+}
+QSpinBox:down-arrow, QDoubleSpinBox:down-arrow, QTimeEdit:down-arrow, QDateTimeEdit:down-arrow {
+	width: 16px;
+	height: 7px;
+	image: url("icons/down-arrow.svg");
+}
+QSpinBox:focus, QDoubleSpinBox:focus, QTimeEdit:focus, QDateTimeEdit:focus {
+	border-width: 1px;
+}
+
+
+
+
+
+QSlider {
+	background: transparent;
+	margin: 2px;
+}
+QSlider::groove {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(220,220,220), stop:1 rgb(210,210,210));
+    border: 1px solid rgb(190,190,190);
+    border-radius: 1px;
+}
+QSlider::groove:horizontal {
+    height: 2px;
+}
+QSlider::groove:vertical {
+    width: 2px;
+}
+QSlider::handle {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(245,245,245), stop:1 rgb(240,240,240));
+    border: 1px solid rgb(200,200,200);
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+}
+QSlider::handle:horizontal {
+    margin-top: -7px;
+    margin-bottom: -7px;
+}
+QSlider::handle:vertical {
+	margin-left: -7px;
+	margin-right: -7px;
+}
+QSlider::sub-page {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(150,150,150), stop:1 rgb(140,140,140));
+}
+
+
+
+
+
+
+:disabled {
+	color: rgb(140,140,140);
+}
+
+
+
+
+
+#clickButton {
+	image: url("icons/click.svg");
+}
+
+#playButton {
+	image: url("icons/play.svg");
+}
+
+#stopButton {
+	image: url("icons/stop.svg");
+}
