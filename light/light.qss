@@ -8,6 +8,8 @@ QWidget {
 
 
 
+
+
 QScrollBar::left-arrow, 
 QScrollBar::right-arrow, 
 QScrollBar::add-page, 
@@ -80,6 +82,7 @@ QLabel {
 
 
 
+
 QRadioButton, QCheckBox {
 	background: transparent;
 }
@@ -127,13 +130,14 @@ QCheckBox::indicator:disabled {
 
 
 
+
 QPushButton, QToolButton {
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
                                 stop:0 rgb(240,240,240), 
                                 stop:1 rgb(235,235,235));
 	border: 1px solid rgb(210,210,210);
-	padding: 6px;
-	icon-size: 14px;
+	padding: 0.5em;
+	icon-size: 12px;
 }
 QPushButton:disabled, 
 QToolButton:disabled {
@@ -143,12 +147,16 @@ QToolButton:disabled {
 }
 QPushButton:hover, 
 QToolButton:hover {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(250,250,250), stop:1 rgb(245,245,245));
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(250,250,250), 
+                                stop:1 rgb(245,245,245));
 }
 
 QPushButton:checked, QToolButton:checked,
 QPushButton:pressed, QToolButton:pressed {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(175,175,175), stop:1 rgb(195,195,195));
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(175,175,175), 
+                                stop:1 rgb(195,195,195));
 	border: 1px solid rgb(195,195,195);
 }
 
@@ -156,15 +164,25 @@ QPushButton:pressed, QToolButton:pressed {
 
 
 
-QSpinBox, QDoubleSpinBox, QTimeEdit, QDateTimeEdit {
+
+QSpinBox, 
+QDoubleSpinBox, 
+QTimeEdit, 
+QDateTimeEdit,
+QLineEdit,
+QTextEdit,
+QPlainTextEdit {
 	background: rgb(250,250,250);
 	border: 1px solid rgb(210,210,210);
-	padding: 4px;
+	padding: 0.4em;
 }
 QSpinBox:disabled, 
 QDoubleSpinBox:disabled, 
 QTimeEdit:disabled, 
-QDateTimeEdit:disabled {
+QDateTimeEdit:disabled,
+QLineEdit:disabled,
+QTextEdit:disabled,
+QPlaneTextEdit:disabled {
 	color: rgb(140,140,140);
 	background: rgb(240,240,240);
 }
@@ -215,16 +233,17 @@ QSpinBox:up-button::pressed, QDoubleSpinBox:up-button::pressed, QTimeEdit:up-but
 QSpinBox:up-arrow, QDoubleSpinBox:up-arrow, QTimeEdit:up-arrow, QDateTimeEdit:up-arrow {
 	width: 16px;
 	height: 7px;
-        image: url("${prefix}/icons/up-arrow.svg");
+    image: url("${prefix}/icons/up-arrow.svg");
 }
 QSpinBox:down-arrow, QDoubleSpinBox:down-arrow, QTimeEdit:down-arrow, QDateTimeEdit:down-arrow {
 	width: 16px;
 	height: 7px;
-        image: url("${prefix}/icons/down-arrow.svg");
+    image: url("${prefix}/icons/down-arrow.svg");
 }
 QSpinBox:focus, QDoubleSpinBox:focus, QTimeEdit:focus, QDateTimeEdit:focus {
 	border-width: 1px;
 }
+
 
 
 
@@ -236,8 +255,9 @@ QSlider {
 }
 QSlider::groove {
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
-                                stop:0 rgb(220,220,220), stop:1 rgb(210,210,210));
-    border: 1px solid rgb(190,190,190);
+                                stop:0 rgb(220,220,220), 
+                                stop:1 rgb(210,210,210));
+    border: 1px solid rgb(200,200,200);
     border-radius: 1px;
 }
 QSlider::groove:horizontal {
@@ -248,7 +268,8 @@ QSlider::groove:vertical {
 }
 QSlider::handle {
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
-                                stop:0 rgb(245,245,245), stop:1 rgb(240,240,240));
+                                stop:0 rgb(245,245,245), 
+                                stop:1 rgb(240,240,240));
     border: 1px solid rgb(200,200,200);
     width: 14px;
     height: 14px;
@@ -264,8 +285,75 @@ QSlider::handle:vertical {
 }
 QSlider::sub-page {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
-                                stop:0 rgb(150,150,150), stop:1 rgb(140,140,140));
+                                stop:0 rgb(150,150,150), 
+                                stop:1 rgb(140,140,140));
+    border: 0px solid transparent;
+    border-radius: 1px;
 }
+
+
+
+
+
+
+QComboBox {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(240,240,240), 
+                                stop:1 rgb(235,235,235));
+    border: 1px solid rgb(210,210,210);
+    border-radius: 6px;
+    padding: 0.4em;
+    min-width: 6em;
+}
+QComboBox:editable {
+    background: rgb(250,250,250);
+}
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(240,240,240), 
+                                stop:1 rgb(235,235,235));
+    width: 22px;
+
+    border-left: 1px solid rgb(210,210,210);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+/* QComboBox gets the "on" state when the popup is open */
+QComboBox:!editable:on,
+QComboBox::drop-down:on {
+    color: rgb(255,255,255);
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 rgb(120,120,120), 
+                                stop: 1.0 rgb(130,130,130));
+    border-left: 1px solid rgb(110,110,110);
+}
+QComboBox:!editable:on {
+    border: 1px solid rgb(130,130,130);   
+}
+QComboBox::down-arrow {
+    width: 16px;
+    height: 7px;
+    image: url("${prefix}/icons/down-arrow.svg");
+}
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    image: url("${prefix}/icons/up-arrow.svg");
+}
+QComboBox QAbstractItemView {
+    border: 0px solid transparent;
+}
+
+
+
+
+
+
+QMenu {
+    background: rgb(255,255,255);
+    selection-background-color: palette(highlight);
+}
+
 
 
 
@@ -290,8 +378,9 @@ QTabBar::tab {
 QTabBar::tab:selected {
     color: rgb(255,255,255);
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 rgb(160,160,160), stop: 1.0 rgb(140,140,140));
-    border: 1px solid rgb(160,160,160);
+                                stop: 0 rgb(140,140,140), 
+                                stop: 1.0 rgb(120,120,120));
+    border: 1px solid rgb(140,140,140);
     margin-left: -1px;
     margin-right: -1px;
 }
@@ -306,6 +395,7 @@ QTabBar::tab:last {
 QTabBar::tab:only-one {
     border-radius: 6px;
 }
+
 
 
 
@@ -335,11 +425,43 @@ QHeaderView::down-arrow {
 QHeaderView::up-arrow {
     image: url("${prefix}/icons/down-arrow.svg");
 }
-QTableView {
+
+QTableView,
+QListView,
+QTreeView {
     background: rgb(250,250,250);
     border: 1px solid rgb(225,225,225);
+}
+QTableView {
     gridline-color: rgb(240,240,240);
 }
+QListView::item,
+QTreeView::item {
+    padding: 1px;
+}
+
+
+
+
+
+
+QProgressBar {
+    font-size: 10pt;
+    text-align: center;
+    border: 1px solid rgb(220,220,220);
+    border-radius: 7px;
+    height: 12px;
+    padding: 1px
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                stop:0 rgb(150,150,150), 
+                                stop:1 rgb(140,140,140));
+    border: 0px solid transparent;
+    border-radius: 6px;
+}
+
 
 
 
@@ -348,6 +470,7 @@ QTableView {
 :disabled {
 	color: rgb(140,140,140);
 }
+
 
 
 
