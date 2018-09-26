@@ -1,0 +1,58 @@
+QToolButton {
+    qproperty-toolButtonStyle: ToolButtonTextUnderIcon;
+}
+
+#maximize {
+    qproperty-toolButtonStyle: ToolButtonIconOnly;
+    qproperty-icon: url("${prefix}/icons/panel/play.svg");
+    width: 10px;
+    height: none;
+}
+
+#zoomOut {
+    qproperty-icon: url("${prefix}/icons/panel/zoom-out.svg");
+}
+
+#scale {
+    qproperty-icon: url("${prefix}/icons/panel/scale.svg");
+}
+
+#zoomIn {
+    qproperty-icon: url("${prefix}/icons/panel/zoom-in.svg");
+}
+
+#loupe {
+    qproperty-icon: url("${prefix}/icons/panel/loupe.svg");
+}
+
+#palette {
+    qproperty-icon: url("${prefix}/icons/panel/day.svg");
+}
+
+#angleAttachment {
+    qproperty-icon: url("${prefix}/icons/panel/fix-direction.svg");
+}
+
+#posAttachment {
+    qproperty-icon: url("${prefix}/icons/panel/fix-center.svg");
+}
+
+#marking {
+    qproperty-icon: url("${prefix}/icons/panel/markup.svg");
+}
+
+#tools {
+    qproperty-icon: url("${prefix}/icons/panel/measuring-tools.svg");
+}
+
+#map {
+    qproperty-icon: url("${prefix}/icons/panel/map.svg");
+}
+
+#radar {
+    qproperty-icon: url("${prefix}/icons/panel/radar-sweep.svg");
+}
+
+#objects {
+    qproperty-icon: url("${prefix}/icons/panel/map-click.svg");
+}
